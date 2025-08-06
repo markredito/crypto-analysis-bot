@@ -46,7 +46,7 @@ vercel
 
 ## API Keys Needed
 
-- **OpenAI**: For AI analysis (GPT-4o + o1-mini models)
+- **OpenAI**: For AI analysis (GPT-4o + o4-mini models)
 - **TwelveData**: For crypto price data (free tier available)
 - **NewsAPI**: For sentiment analysis (free tier available)
 - **Gmail App Password**: For email sending
@@ -76,7 +76,7 @@ vercel
 This bot uses OpenAI's latest models for optimal performance and cost:
 
 - **Sentiment Analysis**: GPT-4o (2024-08-06) - Optimized for structured JSON output
-- **Trading Analysis**: o1-mini (2024-09-12) - Advanced reasoning for complex trading decisions
+- **Trading Analysis**: o4-mini (2025-04-16) - Advanced reasoning for complex trading decisions
 - **Cost Efficient**: ~90% cheaper than previous GPT-4 implementations
 - **Performance**: Faster response times with better analytical accuracy
 
@@ -84,7 +84,7 @@ This bot uses OpenAI's latest models for optimal performance and cost:
 
 - **Backend**: Flask (Python 3.9+)
 - **Data Sources**: TwelveData API (crypto prices), NewsAPI (sentiment)
-- **AI Processing**: OpenAI GPT-4o + o1-mini
+- **AI Processing**: OpenAI GPT-4o + o4-mini
 - **Email**: SMTP via Gmail
 - **Deployment**: Vercel serverless functions
 - **Frontend**: Vanilla JavaScript with responsive CSS

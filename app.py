@@ -354,7 +354,7 @@ Sentiment Analysis (timeframe-matched news):
 {json.dumps(sentiment_data)}"""
     
     response = client.chat.completions.create(
-        model="o1-mini-2024-09-12",
+        model="o4-mini-2025-04-16",
         messages=[{"role": "user", "content": prompt}]
     )
     
