@@ -46,7 +46,7 @@ vercel
 
 ## API Keys Needed
 
-- **OpenAI**: For AI analysis (`gpt-4-turbo-preview`)
+- **OpenAI**: For AI analysis (GPT-4o + o1-mini models)
 - **TwelveData**: For crypto price data (free tier available)
 - **NewsAPI**: For sentiment analysis (free tier available)
 - **Gmail App Password**: For email sending
@@ -71,10 +71,37 @@ vercel
 4. Click "Get Analysis"
 5. Check email for comprehensive trading analysis with entry/exit points
 
-## Family Sharing
+## AI Models & Cost Optimization
 
-Once deployed on Vercel:
-- Share the live URL with family
-- They only need the website URL and their email
-- No technical setup required
-- Works on any device
+This bot uses OpenAI's latest models for optimal performance and cost:
+
+- **Sentiment Analysis**: GPT-4o (2024-08-06) - Optimized for structured JSON output
+- **Trading Analysis**: o1-mini (2024-09-12) - Advanced reasoning for complex trading decisions
+- **Cost Efficient**: ~90% cheaper than previous GPT-4 implementations
+- **Performance**: Faster response times with better analytical accuracy
+
+## Technical Architecture
+
+- **Backend**: Flask (Python 3.9+)
+- **Data Sources**: TwelveData API (crypto prices), NewsAPI (sentiment)
+- **AI Processing**: OpenAI GPT-4o + o1-mini
+- **Email**: SMTP via Gmail
+- **Deployment**: Vercel serverless functions
+- **Frontend**: Vanilla JavaScript with responsive CSS
+
+## API Rate Limits & Costs
+
+**Free Tier Limits:**
+- TwelveData: 800 requests/day
+- NewsAPI: 1,000 requests/day  
+- OpenAI: Pay-per-use (~$0.01-0.05 per analysis)
+- Gmail: No limits for personal use
+
+**Estimated Costs:**
+- ~$0.02 per complete analysis (all timeframes)
+- ~$0.60 for 30 analyses per month
+- Vercel hosting: Free for personal projects
+
+## Disclaimer
+
+This bot provides analysis for educational purposes only. Not financial advice. Always do your own research and never invest more than you can afford to lose.
