@@ -14,6 +14,9 @@ load_dotenv()
 
 app = Flask(__name__, template_folder='../templates')
 
+# For Vercel
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
