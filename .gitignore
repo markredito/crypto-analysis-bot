@@ -1,0 +1,64 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+test_*.py
+*_test.py
+TESTING.md
+test_report.json
+requirements-test.txt
+load_test.py
+run_tests.py
+security_tests.py
+
+# Development files
+*.json
+!vercel.json
+!package.json
+
+# Unused directories
+pages/
+styles/
+
+# Logs
+*.log
