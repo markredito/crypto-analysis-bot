@@ -467,6 +467,10 @@ def index():
 def health():
     return jsonify({'status': 'healthy', 'timestamp': datetime.now().isoformat()})
 
+@app.route('/test')
+def test():
+    return "Flask app is working! Environment variables loaded."
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     try:
