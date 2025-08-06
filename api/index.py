@@ -17,8 +17,9 @@ app = Flask(__name__, template_folder='../templates')
 # For Vercel
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-# Initialize OpenAI client
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+# Initialize OpenAI client lazily
+def get_openai_client():
+    return OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 def clean_crypto_data(raw_data, precision=2):
     """Clean and process crypto data - converted from your n8n JavaScript"""
@@ -251,6 +252,7 @@ def analyze_sentiment(articles, timeframe='24h'):
     
     user_prompt = f"News articles to analyze for {timeframe} timeframe:\n{json.dumps(articles)}"
     
+    client = get_openai_client()
     response = client.chat.completions.create(
         model="gpt-4o-2024-08-06",
         messages=[
@@ -356,6 +358,7 @@ Technical Data (candles):
 Sentiment Analysis (timeframe-matched news):
 {json.dumps(sentiment_data)}"""
     
+    client = get_openai_client()
     response = client.chat.completions.create(
         model="o4-mini-2025-04-16",
         messages=[{"role": "user", "content": prompt}]
