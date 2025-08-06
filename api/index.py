@@ -458,7 +458,10 @@ def send_email(to_email, ticker, analysis, timeframe='24h'):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        return f"Error loading template: {str(e)}", 500
 
 @app.route('/health')
 def health():
@@ -532,6 +535,9 @@ def analyze():
         import traceback
         traceback.print_exc()
         return jsonify({'error': f'Failed to process analysis: {str(e)}'}), 500
+
+# Export the Flask app for Vercel
+app = app
 
 if __name__ == '__main__':
     app.run(debug=True)
