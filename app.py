@@ -249,7 +249,7 @@ def analyze_sentiment(articles, timeframe='24h'):
     user_prompt = f"News articles to analyze for {timeframe} timeframe:\n{json.dumps(articles)}"
     
     response = client.chat.completions.create(
-        model="gpt-4-turbo-preview",
+        model="gpt-4o-2024-08-06",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
@@ -354,7 +354,7 @@ Sentiment Analysis (timeframe-matched news):
 {json.dumps(sentiment_data)}"""
     
     response = client.chat.completions.create(
-        model="gpt-4-turbo-preview",
+        model="o1-mini-2024-09-12",
         messages=[{"role": "user", "content": prompt}]
     )
     
